@@ -60,10 +60,10 @@ async function removeContact(contactId) {
 }
 
 async function addContact(name, email, phone) {
-  // ...твій код. Повертає об'єкт доданого контакту.
   const contacts = await readContacts();
   const newContact = { id: crypto.randomUUID(), name, email, phone };
   contacts.push(newContact);
+
   await writeContacts(contacts);
 
   return newContact;
