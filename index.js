@@ -6,19 +6,19 @@ const program = new Command();
 const invokeAction = async ({ action, id, name, email, phone }) => {
   switch (action) {
     case "list":
-      const contacts = method.listContacts();
+      const contacts = await method.listContacts();
       return console.table(contacts);
 
     case "get":
-      const contact = method.getContactById(id);
+      const contact = await method.getContactById(id);
       return console.log(contact);
 
     case "add":
-      const newContact = method.addContact(name, email, phone);
+      const newContact = await method.addContact(name, email, phone);
       return console.log(newContact);
 
     case "remove":
-      const deleted = method.removeContact(id);
+      const deleted = await method.removeContact(id);
       return console.log(deleted);
 
     default:
@@ -35,6 +35,6 @@ program
 
 program.parse(process.argv);
 
-const argv = program.opts();
+const options = program.opts();
 
-invokeAction(argv);
+invokeAction(options);
