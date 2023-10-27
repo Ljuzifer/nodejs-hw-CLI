@@ -1,21 +1,21 @@
 # nodejs-hw-cli
 
-<!-- LIST -->
+LIST
 
 https://ibb.co/Jz5yNk9
 
-<!-- GET -->
+GET
 
 https://ibb.co/r7hjqvd
 
-<!-- ADD -->
+ADD
 
 https://ibb.co/MVSsXdH
 
-<!-- REMOVE -->
+REMOVE
 
 https://ibb.co/44nQGtY
 
-<!-- UPDATE -->
+UPDATE
 
 https://ibb.co/HzZ3kPt
