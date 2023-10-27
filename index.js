@@ -1,5 +1,5 @@
 const method = require("./db/contacts");
-
+// const { program } = require("commander");
 const { Command } = require("commander");
 const program = new Command();
 
@@ -20,6 +20,10 @@ const invokeAction = async ({ action, id, name, email, phone }) => {
     case "remove":
       const deleted = await method.removeContact(id);
       return console.log(deleted);
+
+    case "update":
+      const updated = await method.updateContact(id, { name, email, phone });
+      return updated;
 
     default:
       return console.warn("\x1B[31m Unknown action type!");
