@@ -22,8 +22,8 @@ const invokeAction = async ({ action, id, name, email, phone }) => {
       return console.log(deleted);
 
     case "update":
-      const updated = await method.updateContact(id, { name, email, phone });
-      return updated;
+      const updated = await method.updateContact(id, name, email, phone);
+      return console.log(updated);
 
     default:
       return console.warn("\x1B[31m Unknown action type!");

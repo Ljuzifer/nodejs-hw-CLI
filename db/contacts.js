@@ -69,18 +69,27 @@ async function addContact(name, email, phone) {
   return newContact;
 }
 
-async function updateContact(contactId, data) {
+async function updateContact(id, name, email, phone) {
   const contacts = await readContacts();
-  const index = contacts.findIndex((i) => i.id === contactId);
+  const index = contacts.findIndex((i) => i.id === id);
 
   if (index === -1) {
     return null;
   }
 
-  contacts[index] = { contactId, ...data };
+  const currentContact = contacts[index];
+
+  const updatedContact = {
+    id: currentContact.id,
+    name: name || currentContact.name,
+    email: email || currentContact.email,
+    phone: phone || currentContact.phone,
+  };
+
+  contacts[index] = updatedContact;
 
   await writeContacts(contacts);
-  return contacts[index];
+  return updatedContact;
 }
 
 module.exports = {
