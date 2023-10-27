@@ -1,4 +1,4 @@
-const method = require("./db/contacts");
+const method = require("./contacts");
 // const { program } = require("commander");
 const { Command } = require("commander");
 const program = new Command();
